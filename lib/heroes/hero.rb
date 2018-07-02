@@ -6,7 +6,6 @@ class Hero < Creature
 
   def initialize(args = {})
     super
-    @weapon = args.fetch(:weapon, nil)
     @strike = initial_strike
   end
 
@@ -15,7 +14,7 @@ class Hero < Creature
   end
 
   def strike
-    @weapon&.strike || initial_strike
+    initial_strike
   end
 
   def initial_strike

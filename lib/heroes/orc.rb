@@ -1,8 +1,9 @@
 require_relative './hero'
 
 class Orc < Hero
-  def initialize
+  def initialize(args = {})
     super
+    @weapon = args.fetch(:weapon, nil)
   end
 
   def race

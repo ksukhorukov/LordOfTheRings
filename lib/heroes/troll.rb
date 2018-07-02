@@ -1,7 +1,7 @@
 require_relative './hero'
 
 class Troll < Hero
-  def initialize
+  def initialize(args = {})
     super
   end
 

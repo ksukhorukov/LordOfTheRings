@@ -14,10 +14,10 @@ RSpec.describe Hero do
   end
 
   it 'has race hero' do 
-    expect(hero.race).to eq(:hero)
+    expect(hero.race).to be_equal(:hero)
   end
 
   it 'is vegetarian by default' do 
-    expect(hero.diet).to eq([:vegetable])
+    expect(hero.diet).to match([:vegetable])
   end
 end

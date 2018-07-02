@@ -36,7 +36,8 @@ class Hero < Creature
 
   def damage(hit)
     if mode == :defense
-      @health -= defense - hit
+      potential_damage = defense - hit
+      @health -= potential_damage * -1 if potential_damage < 0
     else
       @health -= hit
     end

@@ -14,7 +14,7 @@ RSpec.describe Hero do
     expect(hero.skills.size).to eq(0)
   end
 
-  it 'has hero hero' do 
+  it 'has race hero' do 
     expect(hero.race).to eq(:hero)
   end
 

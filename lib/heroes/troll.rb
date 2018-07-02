@@ -12,10 +12,6 @@ class Troll < Hero
   def initial_health
     GameSettings.settings[:troll_initial_health]
   end
-
-  def strike
-    @weapon&.strike || initial_strike
-  end
   
   def initial_strike
     GameSettings.settings[:troll_initial_strike]

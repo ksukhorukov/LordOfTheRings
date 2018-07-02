@@ -23,6 +23,11 @@ class GameSettings
       troll_sustenance: 15,
       troll_defense: 10,
 
+      #Hobbits
+      hobbit_initial_health: 10,
+      hobbit_initial_strike: 2,
+      hobbit_sustenance: 5,
+      hobbit_defense: 2,
 
       #Weapons
       magic_sword_strike: 95

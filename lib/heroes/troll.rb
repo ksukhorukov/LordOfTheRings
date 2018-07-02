@@ -13,12 +13,12 @@ class Troll < Hero
     25
   end
 
+  def strike
+    @weapon&.strike || initial_strike
+  end
+  
   def initial_strike
     10
-  end
-
-  def initial_skills
-    []
   end
 
   def diet

@@ -1,7 +1,7 @@
 class Creature
   attr_reader :health
 
-  def initialize
+  def initialize(args = {})
     @health = initial_health
   end
 

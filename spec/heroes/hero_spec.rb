@@ -10,10 +10,6 @@ RSpec.describe Hero do
     expect(hero.strike).to be_equal(1)
   end
 
-  it 'has empty set of skills' do 
-    expect(hero.skills.size).to eq(0)
-  end
-
   it 'has race hero' do 
     expect(hero.race).to eq(:hero)
   end

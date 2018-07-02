@@ -21,10 +21,6 @@ class Hobbit < Hero
     GameSettings.settings[:hobbit_initial_strike]
   end
 
-  def diet
-    [:orc, :hobbit]
-  end
-
   def sustenance
     GameSettings.settings[:hobbit_sustenance]
   end

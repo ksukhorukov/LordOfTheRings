@@ -5,7 +5,7 @@ require_relative '../../lib/settings/game_settings'
 
 RSpec.describe Orc do 
   let(:orc) { Orc.new }
-  let(:orc_with_magic_sword) { Orc.new(weapon: MagicSword)}
+
   it 'has health eqauls 15' do 
     expect(orc.health).to be_equal(GameSettings.settings[:orc_initial_health])
   end
@@ -23,9 +23,13 @@ RSpec.describe Orc do
     expect(orc.race).to be_equal(:orc)
   end
 
-  it 'orc with magic sword has strike power equals 100' do 
-    expect(orc_with_magic_sword.strike).to be_equal(
-      GameSettings.settings[:orc_initial_strike] + GameSettings.settings[:magic_sword_strike]
-    )
+  context 'orc with magic sword' do 
+    let(:orc_with_magic_sword) { Orc.new(weapon: MagicSword)}
+
+    it 'strike power equals 100' do 
+      expect(orc_with_magic_sword.strike).to be_equal(
+        GameSettings.settings[:orc_initial_strike] + GameSettings.settings[:magic_sword_strike]
+      )
+    end
   end
 end

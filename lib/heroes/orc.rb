@@ -1,20 +1,20 @@
 require_relative './hero'
 
-class Troll < Hero
+class Orc < Hero
   def initialize
     super
   end
 
   def race
-    :troll
+    :orc
   end
 
   def initial_health
-    25
+    15
   end
 
   def initial_strike
-    10
+    5
   end
 
   def initial_skills

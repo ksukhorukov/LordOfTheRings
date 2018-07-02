@@ -18,11 +18,11 @@ class Creature
   end
 
   def eat(product)
-    @health += product.sustenance if can_eat?(product)
+    @health += product.sustenance if can_eat?(product) && !product.alive?
   end
 
   def diet
-    [:sun]
+    [:sun, :water]
   end
 
   def can_eat?(product)
@@ -31,5 +31,9 @@ class Creature
 
   def sustenance
     1
+  end
+
+  def race
+    :vegetable
   end
 end

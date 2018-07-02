@@ -22,8 +22,12 @@ RSpec.describe Creature do
     expect(creature.alive?).to be(false)
   end
 
-  it 'eat sun' do 
-    expect(creature.diet.size).to be_equal(1)
-    expect(creature.diet[0]).to be_equal(:sun)
+  it 'can eat sun and water' do 
+    expect(creature.diet.size).to be_equal(2)
+    expect(creature.diet).to match([:sun, :water])
+  end
+
+  it 'has race vegetable' do 
+    expect(creature.race).to be_equal(:vegetable)
   end
 end

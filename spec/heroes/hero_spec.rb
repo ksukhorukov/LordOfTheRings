@@ -14,12 +14,11 @@ RSpec.describe Hero do
     expect(hero.skills.size).to eq(0)
   end
 
-
-  it 'has hero race by default' do 
+  it 'has hero hero' do 
     expect(hero.race).to eq(:hero)
   end
 
   it 'is vegetarian by default' do 
-    expect(hero.diet).to eq([:vegetarian])
+    expect(hero.diet).to eq([:vegetable])
   end
 end

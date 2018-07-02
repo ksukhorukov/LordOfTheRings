@@ -5,7 +5,7 @@ class Orc < Hero
   include Armed
   
   def initialize(args = {})
-    super
+    super(args)
     @weapon = args.fetch(:weapon, nil)
   end
 
@@ -27,5 +27,9 @@ class Orc < Hero
 
   def sustenance
     GameSettings.settings[:orc_sustenance]
+  end
+
+  def defense
+    GameSettings.settings[:orc_defense]
   end
 end

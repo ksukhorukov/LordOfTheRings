@@ -1,12 +1,13 @@
 require_relative '../creatures/creature'
 
 class Hero < Creature
-  attr_reader :health 
+  attr_reader :health, :mode
   attr_accessor :weapon
 
   def initialize(args = {})
     super
     @strike = initial_strike
+    @mode = args.fetch(:mode, :defense)
   end
 
   def race
@@ -31,5 +32,17 @@ class Hero < Creature
 
   def sustenance
     GameSettings.settings[:hero_sustenance]
+  end
+
+  def damage(hit)
+    if mode == :defense
+      @health -= defense - hit
+    else
+      @health -= hit
+    end
+  end
+
+  def defense
+    GameSettings.settings[:hero_defense]
   end
 end

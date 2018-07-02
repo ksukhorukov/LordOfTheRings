@@ -2,7 +2,7 @@ require_relative './hero'
 
 class Troll < Hero
   def initialize(args = {})
-    super
+    super(args)
   end
 
   def race
@@ -27,5 +27,9 @@ class Troll < Hero
 
   def sustenance
     GameSettings.settings[:troll_sustenance]
+  end
+
+  def defense
+    GameSettings.settings[:troll_defense]
   end
 end

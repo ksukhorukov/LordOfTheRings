@@ -29,6 +29,8 @@ class GameSettings
       hobbit_sustenance: 5,
       hobbit_defense: 2,
 
+      races: [:hero, :hobbit, :orc, :troll],
+
       #Weapons
       magic_sword_strike: 95
     }

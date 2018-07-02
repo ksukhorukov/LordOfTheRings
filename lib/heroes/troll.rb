@@ -9,14 +9,6 @@ class Troll < Hero
     :troll
   end
 
-  def initial_health
-    GameSettings.settings[:troll_initial_health]
-  end
-  
-  def initial_strike
-    GameSettings.settings[:troll_initial_strike]
-  end
-
   def diet
     [:orc, :hobbit]
   end
@@ -27,5 +19,15 @@ class Troll < Hero
 
   def defense
     GameSettings.settings[:troll_defense]
+  end
+
+  private
+
+  def initial_health
+    GameSettings.settings[:troll_initial_health]
+  end
+  
+  def initial_strike
+    GameSettings.settings[:troll_initial_strike]
   end
 end

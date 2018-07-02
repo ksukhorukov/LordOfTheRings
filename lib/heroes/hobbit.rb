@@ -13,19 +13,21 @@ class Hobbit < Hero
     :hobbit
   end
 
-  def initial_health
-    GameSettings.settings[:hobbit_initial_health]
-  end
-  
-  def initial_strike
-    GameSettings.settings[:hobbit_initial_strike]
-  end
-
   def sustenance
     GameSettings.settings[:hobbit_sustenance]
   end
 
   def defense
     GameSettings.settings[:hobbit_defense]
+  end
+
+  private
+
+  def initial_health
+    GameSettings.settings[:hobbit_initial_health]
+  end
+  
+  def initial_strike
+    GameSettings.settings[:hobbit_initial_strike]
   end
 end

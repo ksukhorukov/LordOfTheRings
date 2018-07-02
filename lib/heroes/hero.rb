@@ -18,14 +18,6 @@ class Hero < Creature
     initial_strike
   end
 
-  def initial_strike
-    GameSettings.settings[:hero_initial_strike]
-  end
-
-  def initial_health
-    GameSettings.settings[:hero_initial_health]
-  end
-
   def diet
     [:vegetable]
   end
@@ -45,5 +37,15 @@ class Hero < Creature
 
   def defense
     GameSettings.settings[:hero_defense]
+  end
+
+  private
+
+  def initial_strike
+    GameSettings.settings[:hero_initial_strike]
+  end
+
+  def initial_health
+    GameSettings.settings[:hero_initial_health]
   end
 end

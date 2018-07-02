@@ -1,6 +1,9 @@
 require_relative './hero'
+require_relative '../treats/armed'
 
 class Orc < Hero
+  include Armed
+  
   def initialize(args = {})
     super
     @weapon = args.fetch(:weapon, nil)
@@ -12,10 +15,6 @@ class Orc < Hero
 
   def initial_health
     GameSettings.settings[:orc_initial_health]
-  end
-
-  def strike
-    @weapon&.strike || initial_strike
   end
   
   def initial_strike

@@ -1,11 +1,12 @@
 require_relative '../spec_helper'
 require_relative '../../lib/creatures/creature'
+require_relative '../../lib/settings/game_settings'
 
 RSpec.describe Creature do 
   let (:creature) { Creature.new }
 
   it 'has health eqauls 2' do 
-    expect(creature.health).to be_equal(2)
+    expect(creature.health).to be_equal(GameSettings.settings[:creature_initial_health])
   end
 
   it 'is alive after creation' do 

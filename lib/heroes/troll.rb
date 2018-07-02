@@ -10,7 +10,7 @@ class Troll < Hero
   end
 
   def initial_health
-    25
+    GameSettings.settings[:troll_initial_health]
   end
 
   def strike
@@ -18,10 +18,14 @@ class Troll < Hero
   end
   
   def initial_strike
-    10
+    GameSettings.settings[:troll_initial_strike]
   end
 
   def diet
     [:orc, :hobbit]
+  end
+
+  def sustenance
+    GameSettings.settings[:troll_sustenance]
   end
 end

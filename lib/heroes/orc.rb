@@ -10,7 +10,7 @@ class Orc < Hero
   end
 
   def initial_health
-    15
+    GameSettings.settings[:orc_initial_health]
   end
 
   def strike
@@ -18,10 +18,14 @@ class Orc < Hero
   end
   
   def initial_strike
-    5
+    GameSettings.settings[:orc_initial_strike]
   end
 
   def diet
     [:orc, :hobbit]
+  end
+
+  def sustenance
+    GameSettings.settings[:orc_sustenance]
   end
 end

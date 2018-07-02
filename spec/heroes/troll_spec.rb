@@ -1,15 +1,16 @@
 require_relative '../spec_helper'
 require_relative '../../lib/heroes/troll'
+require_relative '../../lib/settings/game_settings'
 
 RSpec.describe Troll do 
   let(:troll) { Troll.new }
 
   it 'has health eqauls 25' do 
-    expect(troll.health).to be_equal(25)
+    expect(troll.health).to be_equal(GameSettings.settings[:troll_initial_health])
   end
 
   it 'has strike eqauls 10' do 
-    expect(troll.strike).to be_equal(10)
+    expect(troll.strike).to be_equal(GameSettings.settings[:troll_initial_strike])
   end
 
   it 'can eat sun and water' do 

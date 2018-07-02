@@ -1,3 +1,5 @@
+require_relative '../settings/game_settings'
+
 class Creature
   attr_reader :health
 
@@ -10,7 +12,7 @@ class Creature
   end
 
   def initial_health
-    2
+    GameSettings.settings[:creature_initial_health]
   end
 
   def alive?
@@ -30,7 +32,7 @@ class Creature
   end
 
   def sustenance
-    1
+    GameSettings.settings[:creature_sustenance]
   end
 
   def race

@@ -4,7 +4,7 @@ There are trolls, orcs and hobbits. Trolls can eat orcs and hobbits. Orcs can ea
 An attempt to eat another clan is successful if all heroes of opposite clan are dead. 
 Everything matters during the fight: race of heroes, number of heroes and weapons that they use.
 
-## Simulated scenarioues
+## Simulated scenarios
 
 * A troll eats hobbit
 * Two orcs fighting with each other for hobbit. The winner eats hobbit.

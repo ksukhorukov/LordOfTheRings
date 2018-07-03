@@ -9,6 +9,10 @@ RSpec.describe Hero do
     expect(hero.health).to be_equal(GameSettings.settings[:hero_initial_health])
   end
 
+  it 'has an empty bag initially' do 
+    expect(hero.bag.size).to be_equal(0)
+  end
+
   it 'can has strike power equals 1' do 
     expect(hero.strike).to be_equal(GameSettings.settings[:hero_initial_strike])
   end

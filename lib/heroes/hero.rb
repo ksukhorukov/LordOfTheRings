@@ -2,12 +2,13 @@ require_relative '../creatures/creature'
 
 class Hero < Creature
   attr_reader :health, :mode
-  attr_accessor :weapon
+  attr_accessor :weapon, :bag
 
   def initialize(args = {})
     super
     @strike = initial_strike
     @mode = args.fetch(:mode, :defense)
+    @bag = args.fetch(:bag, [])
   end
 
   def race

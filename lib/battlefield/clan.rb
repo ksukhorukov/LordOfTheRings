@@ -5,12 +5,13 @@ require_relative '../heroes/hero'
 require_relative '../heroes/orc'
 
 class Clan
-  attr_accessor :heroes
+  attr_accessor :heroes, :artefacts
   attr_reader :mode
 
-  def initialize(members: {}, mode: :neutral)
+  def initialize(members: {}, mode: :neutral, artefacts: [])
     @heroes = []
     @mode = mode
+    @artefacts = artefacts
     heroes_factory(members) unless members.empty?
   end
 

@@ -8,6 +8,10 @@ RSpec.describe Clan do
     expect(clan.heroes.size).to be_equal(0)
   end
 
+  it 'has an empty set of artifacts initially' do 
+    expect(clan.artefacts.size).to be_equal(0)
+  end
+
   it 'is is neutral initially' do 
     expect(clan.mode).to be_equal(:neutral)
   end

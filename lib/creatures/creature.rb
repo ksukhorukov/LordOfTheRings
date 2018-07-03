@@ -28,7 +28,7 @@ class Creature
   end
 
   def can_eat?(product)
-    diet.include? product
+    diet.include? product.class.to_s.downcase.to_sym
   end
 
   def sustenance

@@ -1,17 +1,18 @@
-class Batle
+class Battle
   attr_reader :clans, :prize, :winner, :dead_heroes
 
-  def intialize(clans: clans, prize: nil)
+  def initialize(clans: [], prize: nil)
     raise 'You need to define two clans' if clans.size != 2
     @clans = clans
     @prize = prize
     @dead_heroes = []
-    @winner = 'fight will show'
+    @winner = nil
   end
 
   def fight
-    while(true) {
+    while(true) do
       break unless first_clan.alive? || second_clan.alive?
+      
       first_hero = first_clan_member
       second_hero = second_clan_member
 
@@ -21,14 +22,17 @@ class Batle
       second_hero.damage(first_hero.strike)
 
       bury([first_hero, second_hero])
-    }
+
+      reject_dead_heroes
+    end
+
     define_winner
     @winner.artefacts << prize unless prize.nil?
   end
 
   private
 
-  def firtst_clan
+  def first_clan
     clans[0]
   end
 
@@ -41,14 +45,14 @@ class Batle
   end
 
   def heal(heroes = [])
-    heroes.each { |hero|
-      dead_heroes.each_with_index { |dead_hero, position|
+    heroes.each do |hero|
+      dead_heroes.each_with_index do |dead_hero, position|
         if hero.can_eat? dead_hero
           hero.eat(dead_hero)
           @dead_heroes.delete_at(position)
         end
-      }
-    }
+      end
+    end
   end
 
   def bury(heroes = [])

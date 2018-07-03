@@ -9,7 +9,7 @@ class Clan
   attr_accessor :heroes, :artefacts
 
   def initialize(name: nil, members: {}, mode: :neutral, artefacts: [], weapon: nil)
-    @name ||= generate_name
+    @name = name || generate_name
     @heroes = []
     @mode = mode
     @artefacts = artefacts

@@ -23,7 +23,7 @@ $ gem install bundler
 $ bundle
 $ rspec
 $ rspec game_spec.rb --color --format doc
-$ ruby game.rb
+$ chmod +x game.rb && ./game.rb
 ```
 
 ## [EOF]

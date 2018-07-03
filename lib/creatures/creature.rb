@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require_relative '../settings/game_settings'
 
 class Creature
   attr_reader :health
 
-  def initialize(args = {})
+  def initialize(_args = {})
     @health = initial_health
   end
 
@@ -24,7 +26,7 @@ class Creature
   end
 
   def diet
-    [:sun, :water]
+    %i[sun water]
   end
 
   def can_eat?(product)

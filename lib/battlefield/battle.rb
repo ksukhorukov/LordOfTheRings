@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Battle
   attr_reader :clans, :prize, :winner, :dead_heroes
 
@@ -10,9 +12,9 @@ class Battle
   end
 
   def fight
-    while(true) do
+    loop do
       break unless first_clan.alive? && second_clan.alive?
-      
+
       first_hero = first_clan_member
       second_hero = second_clan_member
 
@@ -37,7 +39,7 @@ class Battle
   def second_clan
     clans[1]
   end
-  
+
   private
 
   def define_winner
@@ -66,8 +68,6 @@ class Battle
   end
 
   def reject_dead_heroes
-    clans.each { |clan|
-      clan.heroes.reject! { |hero| !hero.alive? }
-    }
+    clans.each { |clan| clan.heroes.select!(&:alive?) }
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../creatures/creature'
 
 class Hero < Creature
@@ -30,7 +32,7 @@ class Hero < Creature
   def damage(hit)
     if mode == :defense
       potential_damage = defense - hit
-      @health -= potential_damage * -1 if potential_damage < 0
+      @health -= potential_damage * -1 if potential_damage.negative?
     else
       @health -= hit
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../settings/game_settings'
 require_relative '../heroes/hobbit'
 require_relative '../heroes/troll'
@@ -18,7 +20,7 @@ class Clan
   end
 
   def alive?
-    heroes.count { |hero| hero.alive? } > 0
+    heroes.count(&:alive?) > 0
   end
 
   private

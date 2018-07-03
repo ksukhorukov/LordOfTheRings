@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './hero'
 require_relative '../weapons/magic_sword'
 require_relative '../treats/armed'
@@ -27,7 +29,7 @@ class Hobbit < Hero
   def initial_health
     GameSettings.settings[:hobbit_initial_health]
   end
-  
+
   def initial_strike
     GameSettings.settings[:hobbit_initial_strike]
   end

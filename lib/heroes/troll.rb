@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './hero'
 
 class Troll < Hero
@@ -10,7 +12,7 @@ class Troll < Hero
   end
 
   def diet
-    [:orc, :hobbit]
+    %i[orc hobbit]
   end
 
   def sustenance
@@ -26,7 +28,7 @@ class Troll < Hero
   def initial_health
     GameSettings.settings[:troll_initial_health]
   end
-  
+
   def initial_strike
     GameSettings.settings[:troll_initial_strike]
   end

@@ -1,6 +1,8 @@
 # Lord of The Rings
 
-There are trolls, orcs and hobbits. Trolls can eat orcs and hobbits. Orcs can eat each other and hobbits. Everybody can fight. Orcs and hobbits can use weapons. If a clan tries to attack another clan, then this clan is aggressor and another clan is defender. Then they are fighting. The attempt to eat another clan is successful if all heroes of opposite clan are dead. Everything matters during the fight: race of heroes, number of heroes and weapons that they have.
+There are trolls, orcs and hobbits. Trolls can eat orcs and hobbits. Orcs can eat each other and hobbits. Everybody can fight. Orcs and hobbits can use weapons. If a clan tries to attack another clan, then this clan becomes an aggressor and another clan becomes a defender and they are starting to fight. 
+An attempt to eat another clan is successful if all heroes of opposite clan are dead. 
+Everything matters during the fight: race of heroes, number of heroes and weapons that they use.
 
 ## Simulated scenarioues
 

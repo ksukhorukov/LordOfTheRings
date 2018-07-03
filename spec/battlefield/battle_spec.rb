@@ -17,7 +17,16 @@ RSpec.describe Battle do
       mode: :defense
     )}
 
+  let(:hobbits_with_magic_sword) { Clan.new(
+      members: {
+        hobbit: 10,
+      },
+      mode: :defense,
+      weapon: MagicSword
+    )}  
+
   let(:battle) { Battle.new(clans: [first_clan, second_clan]) }
+  let(:hobbits_winns) { Battle.new(clans: [first_clan, hobbits_with_magic_sword]) }
 
 
   it 'raises exception if number of clans not equal two' do 
@@ -59,5 +68,17 @@ RSpec.describe Battle do
     victim.damage(GameSettings.settings[:orc_initial_health] * 2)
     battle.send(:bury, [victim])
     expect { battle.send(:reject_dead_heroes) }.to change { battle.send(:first_clan).heroes.size }.by(-1)
+  end
+
+  context 'fight' do 
+    it 'first clan winns and gets the price' do 
+      battle.fight
+      expect(battle.winner).to be_equal(first_clan)
+    end
+
+    it 'hobbits with magic sword winns' do 
+      hobbits_winns.fight
+      expect(hobbits_winns.winner).to be_equal(hobbits_with_magic_sword)
+    end
   end
 end

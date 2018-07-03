@@ -11,7 +11,7 @@ class Battle
 
   def fight
     while(true) do
-      break unless first_clan.alive? || second_clan.alive?
+      break unless first_clan.alive? && second_clan.alive?
       
       first_hero = first_clan_member
       second_hero = second_clan_member
@@ -46,12 +46,10 @@ class Battle
 
   def heal(heroes = [])
     heroes.each do |hero|
-      dead_heroes.each_with_index do |dead_hero, position|
-        if hero.can_eat? dead_hero
-          hero.eat(dead_hero)
-          @dead_heroes.delete_at(position)
-        end
-      end
+      food = dead_heroes.sample { |dead_hero| hero.can_eat? dead_hero }
+      next if food.nil?
+      hero.eat(food)
+      @dead_heroes.delete_at(dead_heroes.index(food))
     end
   end
 

@@ -1,4 +1,5 @@
 require_relative './hero'
+require_relative '../weapons/magic_sword'
 require_relative '../treats/armed'
 
 class Orc < Hero

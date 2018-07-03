@@ -5,14 +5,15 @@ require_relative '../heroes/hero'
 require_relative '../heroes/orc'
 
 class Clan
-  attr_reader :mode, :name
+  attr_reader :mode, :name, :weapon
   attr_accessor :heroes, :artefacts
 
-  def initialize(name: nil, members: {}, mode: :neutral, artefacts: [])
+  def initialize(name: nil, members: {}, mode: :neutral, artefacts: [], weapon: nil)
     @name ||= generate_name
     @heroes = []
     @mode = mode
     @artefacts = artefacts
+    @weapon = weapon
     heroes_factory(members) unless members.empty?
   end
 
@@ -32,6 +33,6 @@ class Clan
 
   def init_heroes_of_race(race, size)
     raise "Undefined race #{race}" unless GameSettings.settings[:races].include? race
-    size.times { @heroes << self.class.const_get(race.to_s.capitalize).new(mode: mode) }
+    size.times { @heroes << self.class.const_get(race.to_s.capitalize).new(mode: mode, weapon: weapon) }
   end
 end

@@ -19,7 +19,7 @@ RSpec.describe Hobbit do
   end
 
   context 'hobbit with magic sword' do 
-    let(:hobbit_with_magic_sword) { Hobbit.new(weapon: MagicSword)}
+    let(:hobbit_with_magic_sword) { Hobbit.new(weapon: :magic_sword)}
 
     it 'strike power equals 97' do 
       expect(hobbit_with_magic_sword.strike).to be_equal(

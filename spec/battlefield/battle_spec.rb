@@ -22,7 +22,7 @@ RSpec.describe Battle do
         hobbit: 10,
       },
       mode: :defense,
-      weapon: MagicSword
+      weapon: :magic_sword
     )}  
 
   let(:battle) { Battle.new(clans: [first_clan, second_clan]) }

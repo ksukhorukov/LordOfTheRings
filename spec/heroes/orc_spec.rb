@@ -24,7 +24,7 @@ RSpec.describe Orc do
   end
 
   context 'orc with magic sword' do 
-    let(:orc_with_magic_sword) { Orc.new(weapon: MagicSword)}
+    let(:orc_with_magic_sword) { Orc.new(weapon: :magic_sword)}
 
     it 'strike power equals 100' do 
       expect(orc_with_magic_sword.strike).to be_equal(

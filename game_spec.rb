@@ -92,7 +92,7 @@ RSpec.describe Battle do
           orc: 1
         },
         mode: :defense,
-        weapon: MagicSword
+        weapon: :magic_sword
       )
 
       battle = Battle.new(clans: [trolls, orc])

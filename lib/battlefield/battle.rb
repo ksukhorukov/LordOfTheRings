@@ -30,8 +30,6 @@ class Battle
     @winner.artefacts << prize unless prize.nil?
   end
 
-  private
-
   def first_clan
     clans[0]
   end
@@ -39,6 +37,8 @@ class Battle
   def second_clan
     clans[1]
   end
+  
+  private
 
   def define_winner
     @winner = first_clan.alive? ? first_clan : second_clan

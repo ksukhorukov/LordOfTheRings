@@ -5,17 +5,26 @@ require_relative '../heroes/hero'
 require_relative '../heroes/orc'
 
 class Clan
+  attr_reader :mode, :name
   attr_accessor :heroes, :artefacts
-  attr_reader :mode
 
-  def initialize(members: {}, mode: :neutral, artefacts: [])
+  def initialize(name: nil, members: {}, mode: :neutral, artefacts: [])
+    @name ||= generate_name
     @heroes = []
     @mode = mode
     @artefacts = artefacts
     heroes_factory(members) unless members.empty?
   end
 
+  def alive?
+    heroes.count { |hero| hero.alive? } > 0
+  end
+
   private
+
+  def generate_name
+    "Clan #{rand(100_000)}"
+  end
 
   def heroes_factory(members)
     members.each { |race, size| init_heroes_of_race(race, size) }

@@ -1,6 +1,4 @@
 require_relative '../spec_helper'
-require_relative '../../lib/heroes/troll'
-require_relative '../../lib/settings/game_settings'
 
 RSpec.describe Troll do 
   let(:troll) { Troll.new }

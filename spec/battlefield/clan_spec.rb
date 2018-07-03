@@ -1,5 +1,4 @@
 require_relative '../spec_helper'
-require_relative '../../lib/battlefield/clan'
 
 RSpec.describe Clan do 
   let(:clan) { Clan.new }

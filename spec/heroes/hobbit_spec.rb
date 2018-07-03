@@ -1,7 +1,4 @@
 require_relative '../spec_helper'
-require_relative '../../lib/heroes/hobbit'
-require_relative '../../lib/weapons/magic_sword'
-require_relative '../../lib/settings/game_settings'
 
 RSpec.describe Hobbit do 
   let(:hobbit) { Hobbit.new }

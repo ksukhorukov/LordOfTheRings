@@ -1,6 +1,4 @@
 require_relative '../spec_helper'
-require_relative '../../lib/heroes/hero'
-require_relative '../../lib/settings/game_settings'
 
 RSpec.describe Hero do 
   let(:hero) { Hero.new }

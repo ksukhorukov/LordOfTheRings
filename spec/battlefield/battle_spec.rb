@@ -71,7 +71,10 @@ RSpec.describe Battle do
   end
 
   context 'fight' do 
-    it 'first clan winns and gets the price' do 
+    let(:empty_clan) { Clan.new }
+    let(:simple_battle) { Battle.new(clans: [first_clan, empty_clan], prize: :nothing)}
+
+    it 'first clan winns' do 
       battle.fight
       expect(battle.winner).to be_equal(first_clan)
     end
@@ -79,6 +82,11 @@ RSpec.describe Battle do
     it 'hobbits with magic sword winns' do 
       hobbits_winns.fight
       expect(hobbits_winns.winner).to be_equal(hobbits_with_magic_sword)
+    end
+
+    it 'the winner gets the prize' do 
+      simple_battle.fight
+      expect(first_clan.artefacts.size).to be_equal(1)
     end
   end
 end

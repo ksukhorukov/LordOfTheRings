@@ -20,6 +20,8 @@ clan_of_hobbits = Clan.new(
     weapon: :magic_sword
   )
 
+puts "[+] Game initialization..."
+
 battle = Battle.new(clans: [clan_of_orcs, clan_of_hobbits])
 
 puts "[+] Fight!"
